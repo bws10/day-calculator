@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<title>Benefits Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <head>
+    <script type="text/javascript">
+        function GetDays(){
+                var dropdt = new Date(document.getElementById("drop_date").value);
+                var pickdt = new Date(document.getElementById("pick_date").value);
+                return parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
+        }
+
+        function cal(){
+        if(document.getElementById("drop_date")){
+            document.getElementById("numdays2").value=GetDays();
+			document.getElementById("numdays3").value=GetDays()+ 1;
+        }  
+    }
+	
+    </script>
+
+</head>
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+.frame-area {
+  display: block;
+  width: 100%;  /* RESPONSIVE WIDTH */
+  max-width: 1200px;
+  height: 550px;
+  overflow: auto;  /* EDIT TO hidden FOR NO SCROLLBAR */
+  border: #999999 1px solid;
+  margin: 0px;
+  padding: 0px;
+  }
+</style>
+<body class="w3-light-grey">
+    
+ <div id="daycalc">
+    <h5> Day Calculator</h5>
+		
+		<div id="reserve_form">
+
+      <div id="pickup_date"><p><label class="form">Start Date: </label><input type="date" class="textbox" id="pick_date" name="pickup_date" onchange="cal()"</p></div>
+
+      <div id="dropoff_date"><p><label class="form">End Date: </label><input type="date" class="textbox" id="drop_date" name="dropoff_date" onchange="cal()"/></p></div>
+
+      <div id="numdays"><label class="form">Exclusive: </label><input type="text" class="textbox" id="numdays2" name="numdays"/></div>
+	<br>
+	    <div id="numdays"><label class="form">Inclusive: </label><input type="text" class="textbox" id="numdays3" name="numdays"/></div>
+
+      </div>
+    </div>
+ </div>
+      
+</body>
+</html>
